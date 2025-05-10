@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You | Kwame Portfolio</title>
+    <!-- Prevent theme flash by applying theme immediately -->
+    <script>
+        // Apply theme immediately before any content renders
+        (function() {
+            const theme = localStorage.getItem('theme');
+            if (theme === 'dark' || (!theme && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                document.documentElement.classList.add('dark-mode');
+                document.write('<style>:root{--primary-color:#8c83ff;--secondary-color:#6d64f9;--text-color:#f0f0f0;--bg-color:#121212;--card-bg:#1e1e1e;--border-color:#333;--shadow-color:rgba(0,0,0,0.3);--header-bg:rgba(18,18,18,0.95);--footer-bg:#1a1a1a;}body{background-color:#121212;color:#f0f0f0;}</style>');
+            } else {
+                document.documentElement.classList.remove('dark-mode');
+            }
+        })();
+    </script>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        .thank-you-container {
+            text-align: center;
+            min-height: calc(100vh - 100px);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .thank-you-icon {
+            font-size: 5rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+        
+        .thank-you-title {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+        }
+        
+        .thank-you-message {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+        
+        .back-button {
+            display: inline-block;
+            background: var(--primary-color);
+            color: #fff;
+            padding: 12px 25px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .back-button:hover {
+            background: var(--secondary-color);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Cursor -->
+        <div class="cursor-dot" data-cursor-dot></div>
+        <div class="cursor-outline" data-cursor-outline></div>
+        
+        <!-- Header -->
+        <header>
+            <div class="logo">
+                <h1>kwame<span>.exe</span></h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="portfolio.html">Portfolio</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="social-icons">
+                <a href="https://x.com/kakrab_a" target="_blank"><i class="fab fa-x-twitter"></i></a>
+                <a href="https://github.com/kwameadobaw/" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="https://web.facebook.com/kwameadobawjnr" target="_blank"><i class="fab fa-facebook"></i></a>
+                <a href="https://www.instagram.com/kakrab_a/" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.linkedin.com/in/kwame-adobaw/" target="_blank"><i class="fab fa-linkedin"></i></a>
+            </div>
+            <div class="theme-toggle">
+                <i class="fas fa-moon"></i>
+                <i class="fas fa-sun"></i>
+                <div class="toggle-ball"></div>
+            </div>
+        </header>
+
+        <!-- Thank You Section -->
+        <section class="thank-you-container">
+            <div class="thank-you-icon">
+                <i class="fas fa-check-circle"></i>
+            </div>
+            <h2 class="thank-you-title">Thank You!</h2>
+            <p class="thank-you-message">Your message has been sent successfully. I appreciate you taking the time to reach out and will get back to you as soon as possible.</p>
+            <a href="index.html" class="back-button">Back to Homepage <i class="fas fa-home"></i></a>
+        </section>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

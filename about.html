@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About | Kwame Portfolio</title>
+    <!-- Prevent theme flash by applying theme immediately -->
+    <script>
+        // Apply theme immediately before any content renders
+        (function() {
+            const theme = localStorage.getItem('theme');
+            if (theme === 'dark' || (!theme && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                document.documentElement.classList.add('dark-mode');
+                document.write('<style>:root{--primary-color:#8c83ff;--secondary-color:#6d64f9;--text-color:#f0f0f0;--bg-color:#121212;--card-bg:#1e1e1e;--border-color:#333;--shadow-color:rgba(0,0,0,0.3);--header-bg:rgba(18,18,18,0.95);--footer-bg:#1a1a1a;}body{background-color:#121212;color:#f0f0f0;}</style>');
+            } else {
+                document.documentElement.classList.remove('dark-mode');
+            }
+        })();
+    </script>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Cursor -->
+        <div class="cursor-dot" data-cursor-dot></div>
+        <div class="cursor-outline" data-cursor-outline></div>
+        
+        <!-- Header -->
+        <header>
+            <div class="logo">
+                <h1>kwame<span>.exe</span></h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html" class="active">About</a></li>
+                    <li><a href="portfolio.html">Portfolio</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="social-icons">
+                <a href="https://x.com/kakrab_a" target="_blank"><i class="fab fa-x-twitter"></i></a>
+                <a href="https://github.com/kwameadobaw/" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="https://web.facebook.com/kwameadobawjnr" target="_blank"><i class="fab fa-facebook"></i></a>
+                <a href="https://www.instagram.com/kakrab_a/" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.linkedin.com/in/kwame-adobaw/" target="_blank"><i class="fab fa-linkedin"></i></a>
+            </div>
+            <div class="theme-toggle">
+                <i class="fas fa-moon"></i>
+                <i class="fas fa-sun"></i>
+                <div class="toggle-ball"></div>
+            </div>
+        </header>
+
+        <!-- About Section -->
+        <section class="about">
+            <h2 class="section-title">About <span>Me</span></h2>
+            
+            <div class="about-content">
+                <div class="about-image">
+                    <img src="images/Kwame.jpg" alt="Kwame's Profile Picture" class="profile-img">
+                </div>
+                <div class="about-text">
+                    <h3>Web Developer & Designer</h3>
+                    <p>Hello! I'm Kwame, a passionate web developer and designer with a keen eye for creating beautiful, functional websites. I specialize in crafting user-friendly interfaces that not only look great but also deliver exceptional user experiences.</p>
+                    <p>With expertise in both frontend and backend technologies, I can build complete web solutions from concept to deployment. I'm constantly learning and adapting to new technologies to ensure my clients receive cutting-edge solutions.</p>
+                    <p>When I'm not coding, you can find me exploring new design trends, contributing to open-source projects, or sharing my knowledge with the developer community.</p>
+                    <div class="cta-buttons">
+                        <a href="docs/Resume_Kwame%20Adobaw.pdf" target="_blank" class="btn primary-btn">
+                            View Resume <i class="fas fa-file-alt"></i>
+                          </a>                          
+                    </div>
+                </div>
+            </div>
+            
+            <h3 class="section-title">My <span>Journey</span></h3>
+            
+            <!-- Timeline -->
+            <div class="timeline">
+                <!-- Education Timeline -->
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-date">2015 - 2019</div>
+                        <h3 class="timeline-title">Bachelor's Degree in Information Technology</h3>
+                        <p class="timeline-description">Ghana Technology University College, where I gained a strong foundation in programming principles, algorithms, and software development methodologies.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-date">2019 - 2022</div>
+                        <h3 class="timeline-title">Communications and IT Manager</h3>
+                        <p class="timeline-description">Developed and maintained client websites with a focus on responsive design and optimal user experience.</p>
+                    </div>
+                </div>
+                
+                <!-- Work Experience Timeline -->
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-date">2022 - 2023</div>
+                        <h3 class="timeline-title">Technical and Sales Support</h3>
+                        <p class="timeline-description">LABUSA - Leading development teams in creating responsive web applications for clients across various industries.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-date">2024</div>
+                        <h3 class="timeline-title">Certified ALX Software Engineer</h3>
+                        <p class="timeline-description">I specialized in web technologies and interactive design principles.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-date">2024 - Date</div>
+                        <h3 class="timeline-title">Freelance Web developer</h3>
+                        <p class="timeline-description">Working as a freelance web developer on contract basis.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Skills Section -->
+            <h3 class="section-title">My <span>Skills</span></h3>
+            <div class="skills-container">
+                <div class="skill" data-line="01">
+                    <div class="skill-name" style="--index: 0">HTML</div>
+                    <div class="skill-bar">
+                        <div class="skill-per" per="90%" style="max-width:90%">90%</div>
+                    </div>
+                </div>
+                <div class="skill" data-line="02">
+                    <div class="skill-name" style="--index: 1">CSS</div>
+                    <div class="skill-bar">
+                        <div class="skill-per" per="85%" style="max-width:85%">85%</div>
+                    </div>
+                </div>
+                <div class="skill" data-line="03">
+                    <div class="skill-name" style="--index: 2">JavaScript</div>
+                    <div class="skill-bar">
+                        <div class="skill-per" per="80%" style="max-width:80%">80%</div>
+                    </div>
+                </div>
+                <div class="skill" data-line="04">
+                    <div class="skill-name" style="--index: 3">React</div>
+                    <div class="skill-bar">
+                        <div class="skill-per" per="75%" style="max-width:75%">75%</div>
+                    </div>
+                </div>
+                <div class="skill" data-line="05">
+                    <div class="skill-name" style="--index: 4">Node.js</div>
+                    <div class="skill-bar">
+                        <div class="skill-per" per="70%" style="max-width:70%">70%</div>
+                    </div>
+                </div>
+                <div class="skill" data-line="06">
+                    <div class="skill-name" style="--index: 5">TypeScript</div>
+                    <div class="skill-bar">
+                        <div class="skill-per" per="65%" style="max-width:65%">65%</div>
+                    </div>
+                </div>
+                <div class="skill" data-line="07">
+                    <div class="skill-name" style="--index: 6">WordPress</div>
+                    <div class="skill-bar">
+                        <div class="skill-per" per="80%" style="max-width:80%">80%</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Services Section -->
+            <h3 class="section-title">My <span>Services</span></h3>
+            <div class="services-container">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3>Web Development</h3>
+                    <p>Custom websites built with the latest technologies to ensure fast loading and responsive design.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-paint-brush"></i>
+                    </div>
+                    <h3>UI/UX Design</h3>
+                    <p>Beautiful and intuitive user interfaces that provide an exceptional user experience.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3>Responsive Design</h3>
+                    <p>Websites that look great on all devices, from desktops to smartphones.</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- <footer>
+        <div class="footer-content">
+            <p>&copy; 2023 kwame.exe. All Rights Reserved.</p>
+        </div>
+    </footer> -->
+
+    <script src="js/script.js"></script>
+</body>
+</html>

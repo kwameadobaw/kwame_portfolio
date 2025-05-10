@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog | Kwame Portfolio</title>
+    <!-- Prevent theme flash by applying theme immediately -->
+    <script>
+        // Apply theme immediately before any content renders
+        (function() {
+            const theme = localStorage.getItem('theme');
+            if (theme === 'dark' || (!theme && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                document.documentElement.classList.add('dark-mode');
+                document.write('<style>:root{--primary-color:#8c83ff;--secondary-color:#6d64f9;--text-color:#f0f0f0;--bg-color:#121212;--card-bg:#1e1e1e;--border-color:#333;--shadow-color:rgba(0,0,0,0.3);--header-bg:rgba(18,18,18,0.95);--footer-bg:#1a1a1a;}body{background-color:#121212;color:#f0f0f0;}</style>');
+            } else {
+                document.documentElement.classList.remove('dark-mode');
+            }
+        })();
+    </script>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/blog.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Cursor -->
+        <div class="cursor-dot" data-cursor-dot></div>
+        <div class="cursor-outline" data-cursor-outline></div>
+        
+        <!-- Header -->
+        <header>
+            <div class="logo">
+                <h1>kwame<span>.exe</span></h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="portfolio.html">Portfolio</a></li>
+                    <li><a href="blog.html" class="active">Blog</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="social-icons">
+                <a href="https://x.com/kakrab_a" target="_blank"><i class="fab fa-x-twitter"></i></a>
+                <a href="https://github.com/kwameadobaw/" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="https://web.facebook.com/kwameadobawjnr" target="_blank"><i class="fab fa-facebook"></i></a>
+                <a href="https://www.instagram.com/kakrab_a/" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.linkedin.com/in/kwame-adobaw/" target="_blank"><i class="fab fa-linkedin"></i></a>
+            </div>
+            <div class="theme-toggle">
+                <i class="fas fa-moon"></i>
+                <i class="fas fa-sun"></i>
+                <div class="toggle-ball"></div>
+            </div>
+        </header>
+
+        <!-- Blog Section -->
+        <section class="blog">
+            <h2 class="section-title">My <span>Blog</span></h2>
+            
+            <!-- Search and Filter -->
+            <div class="blog-controls">
+                <div class="search-container">
+                    <input type="text" id="blog-search" placeholder="Search articles...">
+                    <button id="search-btn"><i class="fas fa-search"></i></button>
+                </div>
+                <div class="tags-filter">
+                    <span class="filter-label">Filter by tags:</span>
+                    <div class="tags-container">
+                        <button class="tag-btn active" data-tag="all">All</button>
+                        <button class="tag-btn" data-tag="ai">AI</button>
+                        <button class="tag-btn" data-tag="development">Development</button>
+                        <button class="tag-btn" data-tag="technology">Technology</button>
+                        <button class="tag-btn" data-tag="future">Future</button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Blog Posts Grid -->
+            <div class="blog-grid">
+                <!-- Blog Post 1 -->
+                <article class="blog-card" data-tags="ai,development,technology">
+                    <div class="blog-image">
+                        <img src="images/ai-development.jpg" alt="AI in Software Development">
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-tags">
+                            <span class="tag">AI</span>
+                            <span class="tag">Development</span>
+                            <span class="tag">Technology</span>
+                        </div>
+                        <h3 class="blog-title">The Rise of AI in Software Development</h3>
+                        <div class="blog-meta">
+                            <span class="blog-date">May 11, 2025</span>
+                            <span class="blog-author">by Kwame Adobaw Jr.</span>
+                        </div>
+                        <p class="blog-excerpt">Exploring how artificial intelligence is revolutionizing the software development lifecycle, from code generation to testing and deployment...</p>
+                        <a href="blog-post-ai-development.html" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+                
+                <!-- Blog Post 2 -->
+                <article class="blog-card" data-tags="ai,future,technology">
+                    <div class="blog-image">
+                        <img src="images/ai-fields.jpg" alt="Exciting Fields in AI">
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-tags">
+                            <span class="tag">AI</span>
+                            <span class="tag">Future</span>
+                            <span class="tag">Technology</span>
+                        </div>
+                        <h3 class="blog-title">Exciting Fields in Artificial Intelligence</h3>
+                        <div class="blog-meta">
+                            <span class="blog-date">May 10, 2025</span>
+                            <span class="blog-author">by Kwame Adobaw Jr.</span>
+                        </div>
+                        <p class="blog-excerpt">Discover the most promising and innovative fields within artificial intelligence that are shaping our future, from healthcare to creative arts...</p>
+                        <a href="blog-post-ai-fields.html" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+            </div>
+        </section>
+    </div>
+
+    <!-- <footer>
+        <div class="footer-content">
+            <p>&copy; 2023 kwame.exe. All Rights Reserved.</p>
+        </div>
+    </footer> -->
+
+    <script src="js/script.js"></script>
+    <script src="js/blog.js"></script>
+</body>
+</html>
