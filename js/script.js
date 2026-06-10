@@ -395,7 +395,62 @@ function setActiveNavLink() {
 // Initialize functions on page load
 window.addEventListener('load', () => {
     setActiveNavLink();
+    // Initialize slideshow if on about page
+    const slideshowContainer = document.querySelector('.slideshow-container');
+    if (slideshowContainer) {
+        showSlides(slideIndex);
+        
+        // Add event listeners for prev/next buttons
+        const prevBtn = slideshowContainer.querySelector('.prev');
+        const nextBtn = slideshowContainer.querySelector('.next');
+        
+        if (prevBtn) prevBtn.addEventListener('click', () => plusSlides(-1));
+        if (nextBtn) nextBtn.addEventListener('click', () => plusSlides(1));
+        
+        // Add event listeners for dots
+        const dots = document.querySelectorAll('.dot');
+        dots.forEach(dot => {
+            dot.addEventListener('click', () => {
+                const slideNum = parseInt(dot.getAttribute('data-slide'));
+                currentSlide(slideNum);
+            });
+        });
+
+        // Auto slide change
+        setInterval(() => {
+            plusSlides(1);
+        }, 5000);
+    }
 });
+
+// Slideshow logic
+let slideIndex = 1;
+
+function plusSlides(n) {
+    showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+    showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+    let i;
+    let slides = document.getElementsByClassName("mySlides");
+    let dots = document.getElementsByClassName("dot");
+    if (slides.length === 0) return; // Exit if no slides (not on about page)
+    
+    if (n > slides.length) {slideIndex = 1}    
+    if (n < 1) {slideIndex = slides.length}
+    for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";  
+    }
+    for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+    }
+    slides[slideIndex-1].style.display = "block";  
+    dots[slideIndex-1].className += " active";
+}
 
 // Run animations on scroll
 window.addEventListener('scroll', () => {
